@@ -17,8 +17,8 @@ export default defineConfig({
       manifest: {
         background_color: '#ffffff',
         theme_color: '#7E1F86',
-        name: '한글사전',
-        short_name: '한글사전',
+        name: '모두의 한글 사전',
+        short_name: '모한사',
         start_url: '/',
         display: 'standalone',
         icons: [
@@ -34,9 +34,18 @@ export default defineConfig({
           },
         ],
       },
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.js',
+      injectManifest: {
+        // swSrc: '/src/sw.js',
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+      },
     }),
   ],
-
+  build: {
+    sourcemap: true,
+  },
   css: {
     preprocessorOptions: {
       scss: {

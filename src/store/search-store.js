@@ -138,8 +138,9 @@ const fetchCategories = () => {
     categories = util.readOnly(res.cates)
   })
 }
-fetchCategories()
+// fetchCategories()
 export { searchState, currentSearch, WordDefinition }
 export default {
   searchWord,
+  fetchCategories,
 }

@@ -1,6 +1,8 @@
 <script>
   import SearchView from './view/SearchView.svelte'
   import TopNav from './view/TopNav.svelte'
+  import env from './service/env'
+  console.log('[ENV]', env)
 </script>
 
 <main>

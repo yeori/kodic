@@ -1,10 +1,9 @@
 import axios from 'axios'
-// import env from "@/service/env";
-// import store from "@/store";
+import env from '../env'
 
 let errorCallback = (_) => {}
-const host = 'http://localhost:8899'
-axios.defaults.baseURL = `${host}/kodict/api`
+const baseUrl = `${env.BACKEND_HOST || ''}/kodict/api`
+axios.defaults.baseURL = baseUrl
 
 axios.interceptors.request.use((config) => {
   // const token = store.state.user.jwt;
